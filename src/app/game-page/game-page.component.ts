@@ -8,28 +8,33 @@ import { Router } from '@angular/router';
   styleUrls: ['./game-page.component.css']
 })
 export class GamePageComponent implements OnInit {
-  public dicevalue1: number = 0;
-  public dicevalue2: number = 0;
-  public dicevalue3: number = 0;
-  public dicevalue4: number = 0;
+  public dicevalue1: string = "assets/images/dice6.png";
+  public dicevalue2: string = "assets/images/dice6.png";
+  public dicevalue3: string = "assets/images/dice6.png";
+  public dicevalue4: string = "assets/images/dice6.png";
+
   constructor(private router: Router) { }
 
   ngOnInit(): void {
+
     if (!sessionStorage.getItem('sid')) {
       this.router.navigate(['login']);
     }
   }
 
   diceroll1() {
-    //dicesound.play();
+    var audio = new Audio();
+    audio.src = "assets/dice.mp3";
+    audio.play();
     var num = Math.floor((Math.random() * 6) + 1);
+    var randomDiceImage: string = "dice" + num + ".png";
+    var randomImageSource: string = "assets/images/" + randomDiceImage;
     //pmove = num;
-    this.dicevalue1 = num;
+    this.dicevalue1 = randomImageSource;
     //    if(num==6){
     //moves[pno] = num;
     //motionOn(pno);
     //diceRotation(pno);
-
     /*---------------------
     var randomNumber1 = Math.floor(Math.random() * 6) + 1; //1-6
   
@@ -43,22 +48,34 @@ export class GamePageComponent implements OnInit {
     --------------------------------*/
   }
   diceroll2() {
-    //dicesound.play();
+    var audio = new Audio();
+    audio.src = "assets/dice.mp3";
+    audio.play();
     var num = Math.floor((Math.random() * 6) + 1);
+    var randomDiceImage: string = "dice" + num + ".png";
+    var randomImageSource: string = "assets/images/" + randomDiceImage;
     //pmove = num;
-    this.dicevalue2 = num;
+    this.dicevalue2 = randomImageSource;
   }
   diceroll3() {
-    //dicesound.play();
+    var audio = new Audio();
+    audio.src = "assets/dice.mp3";
+    audio.play();
     var num = Math.floor((Math.random() * 6) + 1);
+    var randomDiceImage: string = "dice" + num + ".png";
+    var randomImageSource: string = "assets/images/" + randomDiceImage;
     //pmove = num;
-    this.dicevalue3 = num;
+    this.dicevalue3 = randomImageSource;
   }
   diceroll4() {
-    //dicesound.play();
+    var audio = new Audio();
+    audio.src = "assets/dice.mp3";
+    audio.play();
     var num = Math.floor((Math.random() * 6) + 1);
+    var randomDiceImage: string = "dice" + num + ".png";
+    var randomImageSource: string = "assets/images/" + randomDiceImage;
     //pmove = num;
-    this.dicevalue4 = num;
+    this.dicevalue4 = randomImageSource;
   }
 
 

@@ -1,5 +1,5 @@
 <audio id="diceSound">
-  <source src="dice.mp3" type="audio/mpeg">
+  <source src="assets/dice.mp3" type="audio/mpeg">
   Your browser does not support the audio element.
 </audio>
 <audio id="killedSound">
@@ -47,15 +47,15 @@
         <span class="playername text-danger">
           Red Player
         </span>
-        <div class="r-dice" (click)="diceroll1()">
+        <div class="r-dice">
+          <img src={{dicevalue1}} (click)="diceroll1()" style="height: 100%;width: 100%;">
 
-          {{dicevalue1}}
         </div>
       </div>
       <div class="info">
 
-        <div class="b-dice" (click)="diceroll4()">
-          {{dicevalue4}}
+        <div class="b-dice">
+          <img src={{dicevalue4}} (click)="diceroll4()" style="height: 100%;width: 100%;">
         </div>
         <span class="playername text-primary">
           Blue Player
@@ -69,18 +69,18 @@
         <span class="mplayername text-danger">
           Red Player
         </span>
-        <div class="r-dice" (click)="diceroll1()">
+        <div class="r-dice">
 
-          {{dicevalue1}}
+          <img src={{dicevalue1}} (click)="diceroll1()" style="height: 100%;width: 100%;">
         </div>
       </div>
       <div class="info">
         <span class="mplayername text-success">
           Green Player
         </span>
-        <div class="g-dice" (click)="diceroll2()">
+        <div class="g-dice">
 
-          {{dicevalue2}}
+          <img src={{dicevalue2}} (click)="diceroll2()" style="height: 100%;width: 100%;">
         </div>
 
       </div>
@@ -226,16 +226,16 @@
         <span class="playername text-success">
           Green Player
         </span>
-        <div class="g-dice" (click)="diceroll2()">
+        <div class="g-dice">
 
-          {{dicevalue2}}
+          <img src={{dicevalue2}} (click)="diceroll2()" style="height: 100%;width: 100%;">
         </div>
       </div>
       <div class="info">
 
-        <div class="y-dice" (click)="diceroll3()">
+        <div class="y-dice">
 
-          {{dicevalue3}}
+          <img src={{dicevalue3}} (click)="diceroll3()" style="height: 100%;width: 100%;">
         </div>
         <span class="playername text-warning">
           Yellow Player
@@ -246,9 +246,9 @@
     <div class="mdiceboard">
       <div class="info">
 
-        <div class="b-dice" (click)="diceroll4()">
+        <div class="b-dice">
 
-          {{dicevalue4}}
+          <img src={{dicevalue4}} (click)="diceroll4()" style="height: 100%;width: 100%;">
         </div>
         <span class="mplayername text-primary">
           Blue Player
@@ -256,9 +256,9 @@
       </div>
       <div class="info">
 
-        <div class="y-dice" (click)="diceroll3()">
+        <div class="y-dice">
 
-          {{dicevalue3}}
+          <img src={{dicevalue3}} (click)="diceroll3()" style="height: 100%;width: 100%;">
         </div>
         <span class="mplayername text-warning">
           Yellow Player
