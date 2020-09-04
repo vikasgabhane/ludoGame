@@ -11,11 +11,12 @@ import { HttpClient } from '@angular/common/http';
 export class ForgotPasswordComponent implements OnInit {
 
   public uiInvalidCredential = false;
+  public uiInvalidCredential1 = false;
 
   public fbFormGroup = this.fb.group({
     username: ['', Validators.required],
-    password: ['', Validators.required],
-    password1: ['', Validators.required],
+    password: ['', [Validators.required, Validators.minLength(6)]],
+    password1: ['', [Validators.required, Validators.minLength(6)]],
 
   });
 
@@ -29,16 +30,26 @@ export class ForgotPasswordComponent implements OnInit {
   }
 
   async changePassword() {
+    const data = this.fbFormGroup.value;
+
     if (this.fbFormGroup.get('password').value !== this.fbFormGroup.get('password1').value) {
       this.uiInvalidCredential = true;
     }
     else {
-      const data = this.fbFormGroup.value;
-      // ajax call
-      const url = 'http://localhost:3000/changePass';
-      const result: any = await this.http.post(url, data).toPromise();
-      alert("Password Changed..");
-      this.router.navigate(['login']);
+      const url1 = 'http://localhost:3000/checkUser';
+      const result1: any = await this.http.post(url1, data).toPromise();
+
+      if (result1.opr) {
+
+        // ajax call
+        const url = 'http://localhost:3000/changePass';
+        const result: any = await this.http.post(url, data).toPromise();
+        alert("Password Changed..");
+        this.router.navigate(['login']);
+      }
+      else {
+        this.uiInvalidCredential1 = true;
+      }
     }
 
 

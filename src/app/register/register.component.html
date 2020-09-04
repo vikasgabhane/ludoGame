@@ -18,11 +18,14 @@
         <input type="text" class="bi" placeholder="Mobile" formControlName="mobile">
 
         <br><br>
-        <button class="play" (click)="register()">Register</button><br>
+        <button class=" btn btn-sm btn-outline-dark" style="width: 50%;" (click)="register()">Register</button><br>
         <a class="note" routerLink="/login">Login</a><br>
 
         <div class="alert alert-danger" role="alert" *ngIf="uiInvalidCredential">
           User Already Exists..
+        </div>
+        <div class="alert alert-danger" role="alert" *ngIf="uiInvalidCredential1">
+          Email Already Exists..
         </div>
 
       </div>

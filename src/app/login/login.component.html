@@ -6,9 +6,10 @@
       </div>
       <div class="name" [formGroup]="fbFormGroup">
         <input type="text" class="ri" placeholder="Username" formControlName="username">
-        <input type="password" class="gi" placeholder="Password" formControlName="password"><br>
+        <input type="password" class="bi" placeholder="Password" formControlName="password"><br>
 
-        <button class=" btn  btn-sm btn-outline-dark " [disabled]="!fbFormGroup.valid" (click)="logIn()">
+        <button class=" btn  btn-sm btn-outline-dark " style="width: 50%;" [disabled]="!fbFormGroup.valid"
+          (click)="logIn()">
           Log In</button><br>
         <a class="note" (click)="forgotPassword()">Forgot Password?</a><br>
         <a class="note" routerLink="/register">Register Now</a><br>
