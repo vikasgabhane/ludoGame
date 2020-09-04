@@ -1,16 +1,23 @@
-<div class=" row bg-dark justify-content-between align-items-center sticky-top" style="height: 60px;">
-  <div class="col-11 text-warning h3 pr-2" style="font-size: 24px; font-weight: bold;"> LUDO</div>
-  <div class="col-1 ">
-    <button class="btn btn-outline-warning btn-sm " (click)="logoutProcess()">Log Out</button>
+<div class="container-fluid">
+
+  <div class=" row bg-dark justify-content-between align-items-center sticky-top" style="height: 60px;">
+    <div class="col-11 d-flex text-light pr-2">
+      <img src="assets/images/icon.png" alt="" style="height: 30px; width: 30px;">
+      <h3 class="pl-2" style="font-size: 24px; font-weight: bold;">LUDO</h3>
+    </div>
+    <div class="col-1 ">
+      <button class="btn btn-outline-light btn-sm " (click)="logoutProcess()">Log Out</button>
+    </div>
+
   </div>
 
-</div>
 
+  <div class="row pt-5 " style="height: 500px;">
+    <div class="col   d-flex flex-column justify-content-center align-items-center">
+      <img src="assets/images/icon.png" alt="" style="height: 100px; width: 100px;">
+      <h1 class="text-warning" style="font-weight: bold;">Welcome TO Ludo Game</h1>
+      <button class="btn btn-light " style="width: 25%;" (click)="start2()">Start</button>
+    </div>
 
-<div class="row pt-5 " style="height: 500px;">
-  <div class="col   d-flex flex-column justify-content-center align-items-center">
-    <h1 class="text-warning" style="font-weight: bold;">Welcome TO Ludo Game</h1>
-    <button class="btn btn-light " style="width: 25%;" (click)="start2()">Start</button>
   </div>
-
 </div>

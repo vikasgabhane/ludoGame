@@ -11,7 +11,6 @@ import { HttpClient } from '@angular/common/http';
 export class RegisterComponent implements OnInit {
 
   public uiInvalidCredential = false;
-
   public fbFormGroup = this.fb.group({
     fname: ['', Validators.required],
     lname: ['', Validators.required],
@@ -30,8 +29,11 @@ export class RegisterComponent implements OnInit {
   ngOnInit(): void {
   }
 
+
+
   async register() {
     const data = this.fbFormGroup.value;
+
     const url = 'http://localhost:3000/adduser';
 
     const result: any = await this.http.post(url, data).toPromise();

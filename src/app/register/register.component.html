@@ -9,7 +9,7 @@
 
         <input type="text" class="bi" placeholder="Last Name" formControlName="lname">
 
-        <input type="text" class="ri" placeholder="UserName" formControlName="username">
+        <input type="text" #username class="ri" placeholder="UserName" formControlName="username">
 
         <input type="password" class="bi" placeholder="Password" formControlName="password">
 
@@ -19,9 +19,10 @@
 
         <br><br>
         <button class="play" (click)="register()">Register</button><br>
+        <a class="note" routerLink="/login">Login</a><br>
 
         <div class="alert alert-danger" role="alert" *ngIf="uiInvalidCredential">
-          Username Exists..
+          User Already Exists..
         </div>
 
       </div>

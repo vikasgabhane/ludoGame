@@ -8,10 +8,10 @@
         <input type="text" class="ri" placeholder="Username" formControlName="username">
         <input type="password" class="gi" placeholder="Password" formControlName="password"><br>
 
-        <button class="play btn  btn-sm btn-outline-dark" [disabled]="!fbFormGroup.valid" (click)="logIn()">Log
-          In</button><br>
+        <button class=" btn  btn-sm btn-outline-dark " [disabled]="!fbFormGroup.valid" (click)="logIn()">
+          Log In</button><br>
         <a class="note" (click)="forgotPassword()">Forgot Password?</a><br>
-        <button class="play btn btn-sm btn-outline-dark" routerLink="/register">Register Now</button><br>
+        <a class="note" routerLink="/register">Register Now</a><br>
         <div class="alert alert-danger" role="alert" *ngIf="uiInvalidCredential">
           Invaild Data
         </div>
