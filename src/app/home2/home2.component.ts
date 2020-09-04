@@ -10,6 +10,9 @@ export class Home2Component implements OnInit {
   constructor(private router: Router) { }
 
   ngOnInit(): void {
+    if (!sessionStorage.getItem('sid')) {
+      this.router.navigate(['login']);
+    }
   }
 
   start2() {

@@ -19,40 +19,46 @@
   Your browser does not support the audio element.
 </audio>
 <div class="fixed">
+  <!--
   <div class="welcome">
+
     <div class="setting">
+      
       <div class="logo">
         <img src="assets/images/icon.png" class="logo">
       </div>
-      <div class="name">
-        <input type="text" class="ri" placeholder="Red player name...">
-        <input type="text" class="gi" placeholder="Green player name...">
-        <input type="text" class="yi" placeholder="Yellow player name...">
-        <input type="text" class="bi" placeholder="Blue player name..."><br>
-        <button class="play">Play</button><br>
+      
+      <div class="name" [formGroup]="fbFormGroup">
+        <input type="text" class="ri" placeholder="Red player name..." formControlName="ri">
+        <input type="text" class="gi" placeholder="Green player name..." formControlName="gi">
+        <input type="text" class="yi" placeholder="Yellow player name..." formControlName="yi">
+        <input type="text" class="bi" placeholder="Blue player name..." formControlName="bi"><br>
+        <button class="play" (click)="play()">Play</button><br>
         <span class="note">if only two players playing enter only two names</span>
       </div>
+      
     </div>
   </div>
+  -->
   <div class="mainframe">
 
     <div class="diceboard">
       <div class="info">
-        <span class="playername">
-          Player 1
+        <span class="playername text-danger">
+          Red Player
         </span>
-        <div class="r-dice" onclick="dice(this,0)">
+        <div class="r-dice" (click)="diceroll1()">
 
-          0
+          {{dicevalue1}}
         </div>
       </div>
       <div class="info">
 
-        <div class="b-dice" onclick="dice(this,3)">
-          0
+        <div class="b-dice" (click)="diceroll4()">
+          {{dicevalue4}}
         </div>
-        <span class="playername">
-          Player 4
+        <span class="playername text-primary">
+          Blue Player
         </span>
       </div>
 
@@ -60,19 +66,21 @@
 
     <div class="mdiceboard">
       <div class="info">
-        <span class="mplayername">
-          Player 1
+        <span class="mplayername text-danger">
+          Red Player
         </span>
-        <div class="r-dice" onclick="dice(this,0)">
-          0
+        <div class="r-dice" (click)="diceroll1()">
+
+          {{dicevalue1}}
         </div>
       </div>
       <div class="info">
-        <span class="mplayername">
-          Player 2
+        <span class="mplayername text-success">
+          Green Player
         </span>
-        <div class="g-dice" onclick="dice(this,1)">
-          0
+        <div class="g-dice" (click)="diceroll2()">
+
+          {{dicevalue2}}
         </div>
 
       </div>
@@ -215,20 +223,22 @@
     </div>
     <div class="diceboard">
       <div class="info">
-        <span class="playername">
-          Player 2
+        <span class="playername text-success">
+          Green Player
         </span>
-        <div class="g-dice" onclick="dice(this,1)">
-          0
+        <div class="g-dice" (click)="diceroll2()">
+
+          {{dicevalue2}}
         </div>
       </div>
       <div class="info">
 
-        <div class="y-dice" onclick="dice(this,2)">
-          0
+        <div class="y-dice" (click)="diceroll3()">
+
+          {{dicevalue3}}
         </div>
-        <span class="playername">
-          Player 3
+        <span class="playername text-warning">
+          Yellow Player
         </span>
       </div>
     </div>
@@ -236,20 +246,22 @@
     <div class="mdiceboard">
       <div class="info">
 
-        <div class="b-dice" onclick="dice(this,3)">
-          0
+        <div class="b-dice" (click)="diceroll4()">
+
+          {{dicevalue4}}
         </div>
-        <span class="mplayername">
-          Player 4
+        <span class="mplayername text-primary">
+          Blue Player
         </span>
       </div>
       <div class="info">
 
-        <div class="y-dice" onclick="dice(this,2)">
-          0
+        <div class="y-dice" (click)="diceroll3()">
+
+          {{dicevalue3}}
         </div>
-        <span class="mplayername">
-          Player 3
+        <span class="mplayername text-warning">
+          Yellow Player
         </span>
       </div>
     </div>
